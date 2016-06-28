@@ -14,7 +14,7 @@ import tj.david.utils.HSSF2BeanColumMatch;
 import tj.david.utils.JDBCUtils;
 
 
-public class ExcleTest {
+public class Main {
 
 	public static void main(String[] args) {
 		//InputStream is;
