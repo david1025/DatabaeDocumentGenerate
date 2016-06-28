@@ -13,13 +13,15 @@ import tj.david.entity.TableInfo;
 
 public class JDBCUtils {
 	
+	String driver = "com.mysql.jdbc.Driver"; //驱动类
+	String databaseName = "htjrk"; //数据库名
+    String url = "jdbc:mysql://192.168.0.200:3306/" + databaseName; //数据库连接地址
+    String username = "htjrk"; //数据库登录用户名
+    String password = "htjrk"; //数据库登录密码
+	
 	
 	public Connection getConn() {
 		
-	    String driver = "com.mysql.jdbc.Driver";
-	    String url = "jdbc:mysql://192.168.0.200:3306/htjrk";
-	    String username = "htjrk";
-	    String password = "htjrk";
 	    Connection conn = null;
 	    try {
 	        Class.forName(driver); //classLoader,加载对应驱动
@@ -55,7 +57,7 @@ public class JDBCUtils {
 		return list;
 	}
 	
-	public List<TableInfo> getTableColumn(Connection connection, String databaseName, String tableName) {
+	public List<TableInfo> getTableColumn(Connection connection, String tableName) {
 		
 		List<TableInfo> list = new ArrayList<TableInfo>();
 		
