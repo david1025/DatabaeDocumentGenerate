@@ -14,10 +14,10 @@ import tj.david.entity.TableInfo;
 public class JDBCUtils {
 	
 	String driver = "com.mysql.jdbc.Driver"; //驱动类
-	String databaseName = "htjrk"; //数据库名
-    String url = "jdbc:mysql://192.168.0.200:3306/" + databaseName; //数据库连接地址
-    String username = "htjrk"; //数据库登录用户名
-    String password = "htjrk"; //数据库登录密码
+	String databaseName = "dmp"; //数据库名
+    String url = "jdbc:mysql://10.3.5.196:3306/" + databaseName; //数据库连接地址
+    String username = "root"; //数据库登录用户名
+    String password = "root"; //数据库登录密码
 	
 	
 	public Connection getConn() {
@@ -44,7 +44,7 @@ public class JDBCUtils {
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 	            	
-            	String tableName = new String(rs.getString("Tables_in_htjrk"));
+            	String tableName = new String(rs.getString("Tables_in_" + databaseName));
                 list.add(tableName);
 	        }
 			pstmt.close();
